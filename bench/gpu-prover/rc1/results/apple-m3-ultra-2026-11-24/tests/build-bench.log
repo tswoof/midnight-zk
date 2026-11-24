@@ -1,0 +1,24 @@
+   Compiling typenum v1.20.1
+   Compiling num-traits v0.2.19
+   Compiling midnight-gpu-prover-bench v0.1.0 (<workspace>/bench/gpu-prover)
+   Compiling generic-array v0.14.9
+   Compiling crypto-bigint v0.5.5
+   Compiling sec1 v0.7.3
+   Compiling block-buffer v0.10.4
+   Compiling crypto-common v0.1.6
+   Compiling num-integer v0.1.47
+   Compiling digest v0.10.7
+   Compiling sha2 v0.10.9
+   Compiling num-bigint v0.4.8
+   Compiling elliptic-curve v0.13.8
+   Compiling primeorder v0.13.6
+   Compiling k256 v0.13.4
+   Compiling p256 v0.13.2
+   Compiling midnight-curves v0.4.0-rc.1 (<workspace>/curves)
+   Compiling midnight-proofs v0.9.0-rc.1 (<workspace>/proofs)
+    Finished `release` profile [optimized] target(s) in 7.70s
+   Compiling midnight-metal v0.1.0 (<workspace>/metal)
+   Compiling midnight-gpu-prover-bench v0.1.0 (<workspace>/bench/gpu-prover)
+   Compiling midnight-proofs v0.9.0-rc.1 (<workspace>/proofs)
+warning: midnight-metal@0.1.0: midnight-metal: the Metal toolchain was not found (`xcrun -sdk macosx -f metal` failed); embedding the shader source, compiled with newLibraryWithSource at first use
+    Finished `release` profile [optimized] target(s) in 7.55s

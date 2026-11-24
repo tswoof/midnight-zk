@@ -1,0 +1,34 @@
+{
+  "started_utc": "2026-11-24T22:07:57.158060+00:00",
+  "prover_commit": "6bcc6a56e85e584357a67b3bd8a15fb8fda4e2e8",
+  "chip": "Apple M3 Ultra",
+  "memory_bytes": 274877906944,
+  "logical_cpus": 32,
+  "macos": "27.2.1",
+  "threads": 24,
+  "warm_per_process": 5,
+  "repeats": 1,
+  "sizes": [
+    14,
+    16,
+    18,
+    20,
+    21
+  ],
+  "max_start_load1": 16.0,
+  "shader_path": "source compiled at first use (no offline Metal compiler)",
+  "binary_sha256": {
+    "cpu": "3d309f9fb7e2683cd147ed7cb1c9b622dfeffa691f4de3c04ada7d963fb08693",
+    "metal": "1eda156e5294880ea5eaf685b1949cb104b17af48a1b024dd6459ae74d3d107f"
+  },
+  "notes": [
+    "Public deterministic test SRS; no real user witnesses.",
+    "The CPU build has no gpu feature. CPU and Metal share each key cache.",
+    "Default Metal thresholds and CPU/GPU work sharing are preserved.",
+    "Setup, key loading, device registration, cleanup and verification are outside prove_s.",
+    "Metal shader initialization happens before proof 0.",
+    "Desktop workload, no thermal or energy measurements; exploratory measurements."
+  ],
+  "finished_utc": "2026-11-24T22:17:18.479326+00:00",
+  "verified_proofs": 60
+}

@@ -1,0 +1,74 @@
+warning: midnight-metal@0.1.0: midnight-metal: the Metal toolchain was not found (`xcrun -sdk macosx -f metal` failed); embedding the shader source, compiled with newLibraryWithSource at first use
+    Finished `release` profile [optimized] target(s) in 0.13s
+     Running tests/b6.rs (target/release/deps/b6-2b0e9315eda8b01e)
+
+running 2 tests
+test b6_child_daemon ... ok
+test witness_bytes_reach_neither_reply_nor_log ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.30s
+
+     Running tests/breaker_clock.rs (target/release/deps/breaker_clock-3cd71e3d9ff3684a)
+
+running 1 test
+test breaker_failure_is_stamped_after_the_exchange ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/daemon.rs (target/release/deps/daemon-b7f143407bcb979d)
+
+running 9 tests
+test binaries_serve_and_call ... ok
+test client_labels_daemon_and_fallback_results ... ok
+test input_readable_by_others_is_refused_and_no_proof_is_written ... ok
+test lock_lease_gates_device_work ... ok
+test malformed_and_unknown_requests_are_refused ... ok
+test queue_of_one_third_request_is_busy_and_health_answers_during_a_proof ... ok
+test retired_daemon_stops_after_its_reply ... ok
+test round_trip_health_prove_stats_evict_stop ... ok
+test spawned_daemon_is_reaped_when_the_test_panics ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 10.05s
+
+     Running tests/echo.rs (target/release/deps/echo-9a9338d23b13c039)
+
+running 1 test
+test no_caller_value_is_echoed ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.60s
+
+     Running tests/gpu.rs (target/release/deps/gpu-0d66d308de5b2780)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/metal.rs (target/release/deps/metal-b420338178953b0c)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/oracle_process.rs (target/release/deps/oracle_process-e45d7fff9fc01f66)
+
+running 4 tests
+test excessive_k_refused_before_srs_open ... ok
+test memory_first_available_after_deadline_cannot_win_wait ... ok
+test production_switch_refused_before_service_start ... ok
+test start_record_contains_executable_sha256 ... FAILED
+
+failures:
+
+---- start_record_contains_executable_sha256 stdout ----
+
+thread 'start_record_contains_executable_sha256' panicked at gpu-prover/tests/oracle_process.rs:80:5:
+start record lacks the running executable digest
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    start_record_contains_executable_sha256
+
+test result: FAILED. 3 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+
+error: test failed, to rerun pass `-p midnight-gpu-prover --test oracle_process`

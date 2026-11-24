@@ -1,0 +1,83 @@
+warning: midnight-metal@0.1.0: midnight-metal: the Metal toolchain was not found (`xcrun -sdk macosx -f metal` failed); embedding the shader source, compiled with newLibraryWithSource at first use
+    Finished `release` profile [optimized] target(s) in 0.10s
+     Running tests/qa3.rs (target/release/deps/qa3-87b70f24d6558f06)
+
+running 20 tests
+test below_min_k_msm_shows_in_the_reply_as_a_decline ... ok
+test bound_is_checked_on_a_degraded_outcome ... ok
+test breaker_opens_without_a_state_file ... ok
+test busy_refusal_reads_nothing ... ok
+test cancel_withdraws_the_device_and_keeps_the_erasure ... ok
+test cold_admission_reads_free_memory_after_activation ... ok
+test cold_is_the_first_served_proof ... ok
+test cpu_only_request_reports_no_device_peak ... ok
+test label_follows_the_fallback_reasons ... ok
+test lease_is_lost_when_its_descriptor_is_unlocked ... ok
+test lease_is_lost_when_the_lock_file_is_replaced ... ok
+test max_k_is_checked_before_the_srs_load ... ok
+test memory_bound_overrun_replies_then_retires_restartable ... FAILED
+test queued_request_at_retirement_gets_daemon_lost ... ok
+test release_daemon_refuses_test_switches ... ok
+test served_counts_only_verified_replies ... ok
+test served_is_counted_at_the_output_boundary ... ok
+test silent_connection_on_a_full_queue_gets_busy_at_once ... ok
+test start_record_has_the_binary_sha256 ... FAILED
+test wipe_record_has_nonzero_regions_and_check_failures ... ok
+
+failures:
+
+---- memory_bound_overrun_replies_then_retires_restartable stdout ----
+
+thread 'memory_bound_overrun_replies_then_retires_restartable' panicked at gpu-prover/tests/qa3.rs:284:5:
+assertion failed: matches!(s.retirement(), Some(Retirement::Bound(_)))
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- start_record_has_the_binary_sha256 stdout ----
+
+thread 'start_record_has_the_binary_sha256' panicked at gpu-prover/tests/qa3.rs:353:52:
+no binary hash
+
+
+failures:
+    memory_bound_overrun_replies_then_retires_restartable
+    start_record_has_the_binary_sha256
+
+test result: FAILED. 18 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 18.45s
+
+error: test failed, to rerun pass `-p midnight-gpu-prover --test qa3`
+     Running tests/service.rs (target/release/deps/service-41d0d92e6e0fecce)
+
+running 14 tests
+test a_counted_fallback_is_served_degraded_in_production_and_fails_acceptance ... ok
+test a_degraded_admission_without_a_fallback_is_labelled_gpu ... ok
+test a_device_layer_that_takes_fewer_phases_marks_the_proof_degraded ... ok
+test a_key_the_device_quotient_does_not_take_runs_the_quotient_on_the_cpu ... ok
+test admission_moves_phases_off_the_device_when_memory_is_short ... ok
+test an_unconfirmed_wipe_retires_the_service ... ok
+test bad_input_is_refused_before_any_device_work ... ok
+test cpu_proof_verifies_and_is_labelled_cpu ... FAILED
+test record_holds_no_request_content ... ok
+test resident_policy_evicts_by_default_and_keeps_on_request ... ok
+test start_checks_the_vk_pin ... ok
+test start_refuses_bad_k_and_small_srs ... ok
+test wsl_budget_is_used_instead_of_the_free_memory_query ... ok
+test wsl_profile_refuses_keep ... ok
+
+failures:
+
+---- cpu_proof_verifies_and_is_labelled_cpu stdout ----
+
+thread 'cpu_proof_verifies_and_is_labelled_cpu' panicked at gpu-prover/tests/service.rs:43:5:
+assertion failed: r.prove_s > 0.0 && r.verify_s > 0.0 && r.host_hwm_bytes > 0
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    cpu_proof_verifies_and_is_labelled_cpu
+
+test result: FAILED. 13 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.58s
+
+error: test failed, to rerun pass `-p midnight-gpu-prover --test service`
+error: 2 targets failed:
+    `-p midnight-gpu-prover --test qa3`
+    `-p midnight-gpu-prover --test service`

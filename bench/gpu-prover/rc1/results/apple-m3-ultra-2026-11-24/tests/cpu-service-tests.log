@@ -1,0 +1,74 @@
+   Compiling midnight-proofs v0.9.0-rc.1 (<workspace>/proofs)
+   Compiling midnight-gpu-prover v0.1.0 (<workspace>/gpu-prover)
+warning: midnight-metal@0.1.0: midnight-metal: the Metal toolchain was not found (`xcrun -sdk macosx -f metal` failed); embedding the shader source, compiled with newLibraryWithSource at first use
+   Compiling sha3-circuit v0.3.0-rc.1 (https://github.com/alexandroszacharakis8/sha3-circuit?rev=a66a403#a66a403a)
+   Compiling blake2b_halo2 v0.3.0-rc.1 (https://github.com/eryxcoop/blake2b_halo2?rev=6d9828c#6d9828c9)
+   Compiling midnight-circuits v8.0.0-rc.1 (<workspace>/circuits)
+   Compiling midnight-zk-stdlib v3.0.0-rc.1 (<workspace>/zk_stdlib)
+    Finished `release` profile [optimized] target(s) in 32.51s
+     Running unittests src/lib.rs (target/release/deps/midnight_gpu_prover-2175fd6485c193e1)
+
+running 40 tests
+test admission::tests::cpu_when_nothing_fits ... ok
+test admission::tests::evict_then_reduced ... ok
+test admission::tests::gpu_when_it_fits ... ok
+test admission::tests::nothing_configured_is_none ... ok
+test admission::tests::resident_held_lowers_the_need ... ok
+test admission::tests::wait_never_overshoots_by_a_poll ... ok
+test admission::tests::wait_then_gpu ... ok
+test admission::tests::wsl_budget_and_lease ... ok
+test client::tests::absent_daemon_falls_back_and_opens_the_breaker ... ok
+test client::tests::breaker_counts_only_failures_inside_the_window_and_resets_on_success ... ok
+test client::tests::breaker_opens_after_n_failures_in_window_and_cools_down ... ok
+test client::tests::failure_classes ... ok
+test config::tests::bad_values_are_refused ... ok
+test config::tests::breaker_path_follows_socket ... ok
+test config::tests::defaults ... ok
+test config::tests::env_overrides_file ... ok
+test config::tests::wsl_detection ... ok
+test daemon::tests::args ... ok
+test daemon::tests::bind_is_owner_only_and_refuses_a_live_socket ... ok
+test device::tests::no_device_is_inert ... ok
+test device::tests::phases_names_and_sets ... ok
+test example::tests::decode_checks_length_and_canonical_form ... ok
+test input::tests::input_mode_and_kind_are_checked ... ok
+test input::tests::output_is_owner_only ... ok
+test input::tests::wipe_zeroes ... ok
+test lock::tests::a_child_process_does_not_keep_the_lock ... ok
+test lock::tests::descriptor_passing_and_peer_uid ... ok
+test lock::tests::lease_needs_the_holders_descriptor ... ok
+test need::tests::msm_window_follows_the_device_msm ... ok
+test need::tests::need_by_phase_set ... ok
+test need::tests::need_counts_resident_once ... ok
+test need::tests::tables_missing_counts_each_context ... ok
+test protocol::tests::bad_requests_are_refused ... ok
+test protocol::tests::error_replies ... ok
+test protocol::tests::requests_round_trip ... ok
+test report::tests::host_memory_is_read ... FAILED
+test report::tests::labels_serialize_kebab ... ok
+test service::tests::bound_is_checked_when_verification_fails ... FAILED
+test service::tests::served_counts_only_verified_proofs ... ok
+test service::tests::verify_before_return_refuses_a_bad_proof ... ok
+
+failures:
+
+---- report::tests::host_memory_is_read stdout ----
+
+thread 'report::tests::host_memory_is_read' panicked at gpu-prover/src/report.rs:283:9:
+assertion failed: host_hwm_bytes() > 0
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- service::tests::bound_is_checked_when_verification_fails stdout ----
+{"data":{"request":1},"event":"verify-failed"}
+
+thread 'service::tests::bound_is_checked_when_verification_fails' panicked at gpu-prover/src/service.rs:808:9:
+assertion failed: matches!(s.retirement(), Some(Retirement::Bound(_)))
+
+
+failures:
+    report::tests::host_memory_is_read
+    service::tests::bound_is_checked_when_verification_fails
+
+test result: FAILED. 38 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.44s
+
+error: test failed, to rerun pass `-p midnight-gpu-prover --lib`

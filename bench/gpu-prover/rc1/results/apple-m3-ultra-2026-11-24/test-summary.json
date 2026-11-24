@@ -1,0 +1,32 @@
+{
+  "metal-tests.log": {
+    "passed": 56,
+    "failed": 0,
+    "ignored": 3
+  },
+  "daemon-metal-tests.log": {
+    "passed": 5,
+    "failed": 0,
+    "ignored": 0
+  },
+  "cpu-service-tests.log": {
+    "passed": 38,
+    "failed": 2,
+    "ignored": 0
+  },
+  "cpu-integration-tests.log": {
+    "passed": 16,
+    "failed": 1,
+    "ignored": 0
+  },
+  "cpu-remaining-tests.log": {
+    "passed": 31,
+    "failed": 3,
+    "ignored": 0
+  },
+  "total": {
+    "passed": 146,
+    "failed": 6,
+    "ignored": 3
+  }
+}

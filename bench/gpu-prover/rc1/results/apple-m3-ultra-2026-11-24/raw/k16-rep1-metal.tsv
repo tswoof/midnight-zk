@@ -1,0 +1,7 @@
+mode	rep	k	threads	start_load1	proof	state	prove_s	verify_s	verified	msm_calls	ntt_calls	quotient_calls	device_errors	fallbacks	declines	hook_declines	h2d_copies	h2d_bytes	d2h_copies	d2h_bytes	msm_d2h_copies	msm_d2h_bytes	stage	peak_device_bytes	gpu_model	device_total_bytes
+gpu	1	16	24	8.71	0	cold	0.170215167	0.001551916	true	8	7	1	0	3	[["msm","below-min-k",3]]	[["msm","hook",3]]	0	0	0	0	0	0	[0,0,0,0,0,0,0,0]	147612616	Apple M3 Ultra	239143780352
+gpu	1	16	24	8.71	1	warm	0.106120625	0.001183584	true	8	7	1	0	3	[["msm","below-min-k",3]]	[["msm","hook",3]]	0	0	0	0	0	0	[0,0,0,0,0,0,0,0]	147612696	Apple M3 Ultra	239143780352
+gpu	1	16	24	8.71	2	warm	0.102799042	0.001178958	true	8	7	1	0	3	[["msm","below-min-k",3]]	[["msm","hook",3]]	0	0	0	0	0	0	[0,0,0,0,0,0,0,0]	147612696	Apple M3 Ultra	239143780352
+gpu	1	16	24	8.71	3	warm	0.102316167	0.001209000	true	8	7	1	0	3	[["msm","below-min-k",3]]	[["msm","hook",3]]	0	0	0	0	0	0	[0,0,0,0,0,0,0,0]	147612696	Apple M3 Ultra	239143780352
+gpu	1	16	24	8.71	4	warm	0.101410875	0.001181084	true	8	7	1	0	3	[["msm","below-min-k",3]]	[["msm","hook",3]]	0	0	0	0	0	0	[0,0,0,0,0,0,0,0]	147612696	Apple M3 Ultra	239143780352
+gpu	1	16	24	8.71	5	warm	0.102514000	0.001247250	true	8	7	1	0	3	[["msm","below-min-k",3]]	[["msm","hook",3]]	0	0	0	0	0	0	[0,0,0,0,0,0,0,0]	147612696	Apple M3 Ultra	239143780352
